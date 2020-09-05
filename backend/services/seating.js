@@ -36,42 +36,42 @@ const refractorSeating2DArray = (seating2DArray) => {
         rowNumber = rowIndex + 1
         columnNumber = columnIndex + 1
         let seat = {
-          seatno: parseFloat(`${rowNumber}${blockNumber}${columnNumber}`),
+          seatNo: parseFloat(`${rowNumber}${blockNumber}${columnNumber}`),
           blockNumber,
           rowNumber,
           columnNumber,
           seatType: findSeatType(seating2DArray, blockNumber, columnNumber),
-          passgenerNo: 0
+          passengerNo: 0
         }
         seatingList.push(seat);
       })
     })
   });
-  return seatingList.sort((a, b) => a.seatno - b.seatno);
+  return seatingList.sort((a, b) => a.seatNo - b.seatNo);
 }
 
 const fillPassengers = (seatingList, noOfPassengers) => {
   let passengersFilledCount = 0;
   let filledSeatingList = [];
   seatingList.filter(seat => seat.seatType === seatType.Aisle).map((seat) => {
-    seat.passgenerNo = ++passengersFilledCount;
+    seat.passengerNo = ++passengersFilledCount;
     filledSeatingList.push(seat);
   });
   seatingList.filter(seat => seat.seatType === seatType.Window).map((seat) => {
-    seat.passgenerNo = ++passengersFilledCount;
+    seat.passengerNo = ++passengersFilledCount;
     filledSeatingList.push(seat);
   });
   seatingList.filter(seat => seat.seatType === seatType.Middle).map((seat) => {
-    seat.passgenerNo = ++passengersFilledCount;
+    seat.passengerNo = ++passengersFilledCount;
     filledSeatingList.push(seat);
   });
   filledSeatingList = filledSeatingList.map((seat) => {
-    if (seat.passgenerNo > noOfPassengers) {
-      seat.passgenerNo = 0;
+    if (seat.passengerNo > noOfPassengers) {
+      seat.passengerNo = 0;
     }
     return seat;
   });
-  return filledSeatingList.sort((a, b) => a.seatno - b.seatno);
+  return filledSeatingList.sort((a, b) => a.seatNo - b.seatNo);
 }
 
 module.exports = {

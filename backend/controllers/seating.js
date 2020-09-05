@@ -1,11 +1,10 @@
 const { getSeating } = require('../services/seating')
 
 const seating = (req, res, next) => {
-  //const {seatind2DArray, noOfPassengers} = req.body
-  seatind2DArray = [[3, 2], [4, 3], [2, 3], [3, 4]];
-  noOfPassengers = 30;
+  console.log(req.body);
+  const { seating2DArray, noOfPassengers } = req.body
   try {
-    const seatingRes = getSeating(seatind2DArray, noOfPassengers)
+    const seatingRes = getSeating(seating2DArray, noOfPassengers)
     res.send(seatingRes)
   } catch (e) {
     console.log(e.message)

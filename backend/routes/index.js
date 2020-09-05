@@ -8,6 +8,6 @@ router.get('/', function (req, res, next) {
   res.send("Server is working")
 });
 
-router.get('/seating', seating);
+router.post('/seating', seating);
 
 module.exports = router;
