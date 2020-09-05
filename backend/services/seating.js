@@ -23,7 +23,6 @@ const findSeatType = (seating2DArray, blockNumber, columnNumber) => {
   }
 }
 
-
 const refractorSeating2DArray = (seating2DArray) => {
   let seating = {};
   seatingList = [];

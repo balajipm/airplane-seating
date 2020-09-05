@@ -3,7 +3,7 @@ var router = express.Router();
 var { seating } = require('../controllers/seating');
 
 
-/* GET home page. */
+//Health check
 router.get('/', function (req, res, next) {
   res.send("Server is working")
 });
