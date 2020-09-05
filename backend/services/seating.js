@@ -75,5 +75,5 @@ const fillPassengers = (seatingList, noOfPassengers) => {
 }
 
 module.exports = {
-  getSeating
+  getSeating, findSeatType, seatType
 }
